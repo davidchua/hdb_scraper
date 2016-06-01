@@ -826,7 +826,7 @@ $178,600 - 99 Years"
 102B,4-Room,#10-227,10,227,available,93 Sqm,"$493,900"
 102B,4-Room,#11-227,11,227,available,93 Sqm,"$495,300"
 102B,4-Room,#12-227,12,227,booked,,
-102B,4-Room,#13-227,13,227,available,93 Sqm,"$498,100"
+102B,4-Room,#13-227,13,227,booked,,
 102B,4-Room,#14-227,14,227,booked,,
 102B,4-Room,#15-227,15,227,booked,,
 102B,4-Room,#16-227,16,227,booked,,
@@ -1014,7 +1014,7 @@ $178,600 - 99 Years"
 103B,3-Room,#12-51,12,51,booked,,
 103B,3-Room,#03-55,03,55,available,68 Sqm,"$320,900"
 103B,3-Room,#04-55,04,55,available,68 Sqm,"$330,000"
-103B,3-Room,#05-55,05,55,available,68 Sqm,"$336,000"
+103B,3-Room,#05-55,05,55,booked,,
 103B,3-Room,#06-55,06,55,booked,,
 103B,3-Room,#07-55,07,55,booked,,
 103B,3-Room,#08-55,08,55,booked,,
@@ -1264,7 +1264,7 @@ $172,500 - 99 Years"
 104A,3-Room,#04-85,04,85,available,68 Sqm,"$323,900"
 104A,3-Room,#05-85,05,85,available,68 Sqm,"$326,900"
 104A,3-Room,#06-85,06,85,available,68 Sqm,"$329,400"
-104A,3-Room,#07-85,07,85,available,68 Sqm,"$337,900"
+104A,3-Room,#07-85,07,85,booked,,
 104A,3-Room,#08-85,08,85,booked,,
 104A,3-Room,#09-85,09,85,booked,,
 104A,3-Room,#10-85,10,85,booked,,
@@ -1395,7 +1395,7 @@ $172,500 - 99 Years"
 104A,4-Room,#05-81,05,81,available,93 Sqm,"$485,000"
 104A,4-Room,#06-81,06,81,available,93 Sqm,"$488,500"
 104A,4-Room,#07-81,07,81,available,93 Sqm,"$492,000"
-104A,4-Room,#08-81,08,81,available,93 Sqm,"$495,500"
+104A,4-Room,#08-81,08,81,booked,,
 104A,4-Room,#09-81,09,81,available,93 Sqm,"$496,900"
 104A,4-Room,#10-81,10,81,booked,,
 104A,4-Room,#11-81,11,81,booked,,
@@ -1885,8 +1885,8 @@ $172,500 - 99 Years"
 115A,4-Room,#08-31,08,31,available,93 Sqm,"$503,400"
 115A,4-Room,#09-31,09,31,available,93 Sqm,"$504,800"
 115A,4-Room,#10-31,10,31,available,93 Sqm,"$506,200"
-115A,4-Room,#11-31,11,31,available,93 Sqm,"$507,600"
-115A,4-Room,#12-31,12,31,available,93 Sqm,"$509,000"
+115A,4-Room,#11-31,11,31,booked,,
+115A,4-Room,#12-31,12,31,booked,,
 115A,4-Room,#13-31,13,31,booked,,
 115A,4-Room,#14-31,14,31,booked,,
 115A,4-Room,#15-31,15,31,booked,,
