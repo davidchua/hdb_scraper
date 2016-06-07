@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from collections import OrderedDict
 import requests, time, json, csv, os, random
 
-def new_payload(block, flat_type, contract):
+def new_payload(block, flat_type, contract, bto_date):
     return {
         "Flat": flat_type,
         "Block": block,
@@ -19,7 +19,7 @@ def new_payload(block, flat_type, contract):
         "EthnicC": "",
         "EthnicO": "",
         "numSPR": "",
-        "dteBallot": "201511",
+        "dteBallot": bto_date,
         "Neighbourhood": "N9",
         "BonusFlats1": "N",
         "searchDetails": "",
@@ -139,6 +139,39 @@ def write_stats(filename, all_units, blocks_and_flat_types, expected_count):
 
             out.write("\n")
 
+def grab_data(url, blocks_and_flat_types, contracts, expected_count, filename, bto_date):
+    s = requests.Session()
+    # Need to make an initial request to grab the cookies
+    s.get("http://services2.hdb.gov.sg/webapp/BP13AWFlatAvail/BP13EBSFlatSearch?Town=Toa%20Payoh&Flat_Type=BTO&DesType=A&ethnic=Y&Flat=4-Room&ViewOption=A&dteBallot={}&projName=A&brochure=false".format(bto_date))
+
+    all_units = []
+    debug = ""
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+
+    print("[{}] Start".format(datetime.now()))
+    for block, flat_types in blocks_and_flat_types.items():
+        contract = contracts[block]
+
+        for flat_type in flat_types:
+            payload = new_payload(block, flat_type, contract, bto_date)
+
+            units = fetch_and_parse(s, url, payload)
+            print("[{}] {} {}: Found {} units".format(datetime.now(), block, flat_type, len(units)))
+
+            for i, unit in enumerate(units):
+                unit.update(block, flat_type)
+                units[i] = unit
+
+            all_units.extend(units)
+            time.sleep(random.uniform(0, 3))
+
+    all_units = sorted(all_units, key=lambda unit: unit.sort_key())
+
+    write_json("data/{}.json".format(filename), all_units)
+    write_csv("data/{}.csv".format(filename), all_units)
+    write_stats("data/{}.log".format(filename), all_units, blocks_and_flat_types, expected_count)
+    print("[{}] End".format(datetime.now()))
+    print("======================================\n")
 
 if __name__ == "__main__":
     url = "http://services2.hdb.gov.sg/webapp/BP13AWFlatAvail/BP13EBSFlatSearch"
@@ -158,7 +191,6 @@ if __name__ == "__main__":
         "115C": ["3-Room", "4-Room"],
         "118A": ["3-Room", "4-Room"]
     }
-    blocks_and_flat_types = OrderedDict(sorted(blocks_and_flat_types.items()))
 
     contracts = {
         "101A": "C1",
@@ -182,37 +214,56 @@ if __name__ == "__main__":
         "4-Room": 1229,
         "5-Room": 151
     }
+
+    blocks_and_flat_types = OrderedDict(sorted(blocks_and_flat_types.items()))
     expected_count = OrderedDict(sorted(expected_count.items()))
+    grab_data(url, blocks_and_flat_types, contracts, expected_count, 'bidadari', '201511')
 
-    s = requests.Session()
-    # Need to make an initial request to grab the cookies
-    s.get("http://services2.hdb.gov.sg/webapp/BP13AWFlatAvail/BP13EBSFlatSearch?Town=Toa%20Payoh&Flat_Type=BTO&DesType=A&ethnic=Y&Flat=4-Room&ViewOption=A&dteBallot=201511&projName=A&brochure=false")
+    blocks_and_flat_types = {
+        "107A": ["3-Room", "4-Room", "5-Room"],
+        "107B": ["4-Room", "5-Room"],
+        "108A": ["3-Room", "4-Room"],
+        "108B": ["4-Room", "5-Room"],
+        "109A": ["4-Room", "5-Room"],
+        "109B": ["4-Room", "5-Room"],
+        "110A": ["4-Room", "5-Room"],
+        "110B": ["4-Room", "5-Room"],
+        "111A": ["2-Room Flexi (Short Lease/99-Year Lease)","4-Room"],
+        "111B": ["2-Room Flexi (Short Lease/99-Year Lease)","4-Room"],
+        "112A": ["2-Room Flexi (Short Lease/99-Year Lease)","4-Room"],
+        "112B": ["3-Room", "4-Room"],
+        "113A": ["3-Room", "4-Room"],
+        "113B": ["3-Room", "4-Room"],
+        "114A": ["2-Room Flexi (Short Lease/99-Year Lease)","3-Room", "4-Room"],
+        "114B": ["2-Room Flexi (Short Lease/99-Year Lease)","3-Room", "4-Room"],
+    }
 
-    all_units = []
-    debug = ""
-    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    contracts = {
+        "107A": "C7",
+        "107B": "C7",
+        "108A": "C7",
+        "108B": "C7",
+        "109A": "C7",
+        "109B": "C7",
+        "110A": "C7",
+        "110B": "C7",
+        "111A": "C6",
+        "111B": "C6",
+        "112A": "C6",
+        "112B": "C6",
+        "113A": "C6",
+        "113B": "C6",
+        "114A": "C6",
+        "114B": "C6",
+    }
 
-    print("[{}] Start".format(datetime.now()))
-    for block, flat_types in blocks_and_flat_types.items():
-        contract = contracts[block]
+    expected_count = {
+        "2-Room Flexi (Short Lease/99-Year Lease)": 218,
+        "3-Room": 340,
+        "4-Room": 800,
+        "5-Room": 236
+    }
 
-        for flat_type in flat_types:
-            payload = new_payload(block, flat_type, contract)
-
-            units = fetch_and_parse(s, url, payload)
-            print("[{}] {} {}: Found {} units".format(datetime.now(), block, flat_type, len(units)))
-
-            for i, unit in enumerate(units):
-                unit.update(block, flat_type)
-                units[i] = unit
-
-            all_units.extend(units)
-            time.sleep(random.uniform(0, 3))
-
-    all_units = sorted(all_units, key=lambda unit: unit.sort_key())
-
-    write_json("data/bidadari.json", all_units)
-    write_csv("data/bidadari.csv", all_units)
-    write_stats("data/bidadari.log", all_units, blocks_and_flat_types, expected_count)
-    print("[{}] End".format(datetime.now()))
-    print("======================================\n")
+    blocks_and_flat_types = OrderedDict(sorted(blocks_and_flat_types.items()))
+    expected_count = OrderedDict(sorted(expected_count.items()))
+    grab_data(url, blocks_and_flat_types, contracts, expected_count, 'bidadari_2', '201602')
