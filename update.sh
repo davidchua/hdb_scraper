@@ -35,7 +35,7 @@ fi
 
 echo "-------------"
 
-cat data/bidadari.log
+cat data/bidadari_2.log
 
 if grep --quiet "^###OK###$" data/bidadari_2.log; then
     # If there is any changes to the data scraped
