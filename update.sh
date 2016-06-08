@@ -20,7 +20,7 @@ if grep --quiet "^###OK###$" data/bidadari.log; then
     # If there is any changes to the data scraped
     if [[ $(git diff data/bidadari.csv) ]]; then
         git add data/bidadari.*
-        git commit -m "Updated data on `date`"
+        git commit -m "Updated bidadari nov data on `date`"
         if [ "$LIVE" = "true" ]; then
             git push
         fi
@@ -41,7 +41,7 @@ if grep --quiet "^###OK###$" data/bidadari_2.log; then
     # If there is any changes to the data scraped
     if [[ $(git diff data/bidadari_2.csv) ]]; then
         git add data/bidadari_2.*
-        git commit -m "Updated data on `date`"
+        git commit -m "Updated bidadari feb data on `date`"
         if [ "$LIVE" = "true" ]; then
             git push
         fi
