@@ -16,7 +16,7 @@ body {
     border-right: 1px solid #eee;
 }
 
-#blocks-nov, #block-feb {
+#selected-flats {
     display: none;
 }
 
@@ -160,8 +160,7 @@ $(function() {
         populate_data('https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari_2.json', 'feb', flat_blocks_feb, function() {
             $('[data-toggle="tooltip"]').tooltip()
 
-            $('#blocks-nov').show();
-            $('#blocks-feb').show();
+            $('#selected-flats').show();
             $('#loading').hide();
         })
     });
@@ -174,6 +173,7 @@ $(function() {
 <div class="container">
     <div class="jumbotron">
         <h3>Bidadari  Flat Selection</h3>
+        Now with February goodness
     </div>
 
     <div class="alert alert-danger">
@@ -222,22 +222,34 @@ $(function() {
 
     <hr>
 
-    <h3>Total Selected Flats</h3>
-    <div class="row" id="blocks-feb">
-        <div class="col-md-12" id="all-blocks-feb">
-            <h4>February 16</h4>
+    <div id="selected-flats">
+        <h3>Total Selected Flats</h3>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#feb" aria-controls="feb" role="tab" data-toggle="tab">February 16</a></li>
+            <li role="presentation"><a href="#nov" aria-controls="nov" role="tab" data-toggle="tab">November 15</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="feb">
+                <div class="row" id="blocks-feb">
+                    <div class="col-md-12" id="all-blocks-feb">
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="nov">
+                <div class="row" id="blocks-nov">
+                    <div class="col-md-12" id="all-blocks-nov">
+                        <br>
+                    </div>
+                </div>
+            </div>
         </div>
+        <hr>
     </div>
-
-    <hr>
-
-    <div class="row" id="blocks-nov">
-        <div class="col-md-12" id="all-blocks-nov">
-            <h4>November 15</h4>
-        </div>
-    </div>
-
-    <hr>
 
     <div class="row">
         <div class="col-md-12">
