@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bidadari November Flat Selection</title>
+<title>Bidadari Flat Selection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-2.1.4.min.js" integrity="sha384-R4/ztc4ZlRqWjqIuvf6RX5yb/v90qNGx6fS48N0tRxiGkqveZETq72KgDVJCp2TC" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -16,7 +16,7 @@ body {
     border-right: 1px solid #eee;
 }
 
-#blocks {
+#blocks-nov, #block-feb {
     display: none;
 }
 
@@ -26,13 +26,6 @@ body {
 </style>
 <script>
 var flat_types = ['2-Room Flexi (Short Lease/99-Year Lease)', '3-Room', '4-Room', '5-Room'];
-
-var flat_blocks = {
-    '2-Room Flexi (Short Lease/99-Year Lease)': ['101A', '102A', '104A'],
-    '3-Room': ['101A', '102B', '103A', '103B', '104A', '115A', '115C', '118A'],
-    '4-Room': ['101A', '102A', '102B', '103A', '103B', '104A', '105A', '105B', '106A', '106B', '115A', '115C', '118A'],
-    '5-Room': ['105A', '105B', '106A', '106B']
-};
 
 var flat_style = {
     '2-Room Flexi (Short Lease/99-Year Lease)': 'success',
@@ -54,17 +47,17 @@ function create_progress_bar(flat_type, header, num_booked, num_available) {
 
     var title = percentage + '%';
     var label = num_booked + ' / ' + num_available;
-    
+
     var progress_bar = $('<div/>', {
         class: 'progress',
     });
-    
+
     progress_bar.append($('<div/>', {
         class: 'progress-bar-header progress-bar progress-bar-'+flat_style[flat_type],
         'style': 'width: 10%',
     })
     .append($('<strong/>').append(header)));
-    
+
     progress_bar.append($('<div/>', {
         class: 'progress-bar progress-bar-'+flat_style[flat_type],
         role: 'progressbar',
@@ -80,7 +73,7 @@ function create_progress_bar(flat_type, header, num_booked, num_available) {
     return progress_bar;
 }
 
-function update_cumulative(units) {
+function update_cumulative(units, div_id) {
     var output = flat_types.forEach(function(flat_type) {
         var filtered_units = units.filter(function(unit) {
             return unit.flat_type == flat_type;
@@ -92,19 +85,19 @@ function update_cumulative(units) {
 
         var num_booked = booked_units.length;
         var num_available = filtered_units.length;
-        
+
         var header = flat_short_form[flat_type];
         var progress_bar = create_progress_bar(flat_type, header, num_booked, num_available);
 
-        $('#all-blocks').append(progress_bar);
+        $(div_id).append(progress_bar);
     });
 }
 
-function update_blocks(units) {
+function update_blocks(units, flat_blocks, div_id) {
     for (var flat_type in flat_blocks) {
         var div = $('<div/>', {
             class: 'col-md-6'
-        }).append($('<h4/>').append(flat_type + ' selected'));
+        }).append($('<h5/>').append(flat_type + ' selected'));
 
         var blocks = flat_blocks[flat_type];
         var filtered_units = units.filter(function(unit) {
@@ -122,33 +115,57 @@ function update_blocks(units) {
 
             var num_booked = booked_units.length;
             var num_available = block_units.length;
-            
+
             var header = block;
             var progress_bar = create_progress_bar(flat_type, header, num_booked, num_available);
 
             div.append(progress_bar);
         });
 
-        $('#blocks').append(div);
+        $(div_id).append(div);
     }
 }
 
-$(function() {
-    $.get('https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari.json', function(data) {
+var flat_blocks_nov = {
+    '2-Room Flexi (Short Lease/99-Year Lease)': ['101A', '102A', '104A'],
+    '3-Room': ['101A', '102B', '103A', '103B', '104A', '115A', '115C', '118A'],
+    '4-Room': ['101A', '102A', '102B', '103A', '103B', '104A', '105A', '105B', '106A', '106B', '115A', '115C', '118A'],
+    '5-Room': ['105A', '105B', '106A', '106B']
+};
+
+var flat_blocks_feb = {
+    '2-Room Flexi (Short Lease/99-Year Lease)': ['111A', '111B', '112A', '114A', '114B'],
+    '3-Room': ['107A', '108A', '112B', '113A', '113B', '114A', '114B'],
+    '4-Room': ['107A', '107B', '108A', '108B', '109A', '109B', '110A', '110B', '111A', '111B', '112A', '112B', '113A', '113B', '114A', '114B'],
+    '5-Room': ['107A', '107B', '108B', '109A', '109B', '110A', '110B']
+};
+
+function populate_data(url, month, flat_blocks, callback) {
+    $.get(url, function(data) {
         data = JSON.parse(data);
 
         var timestamp = new Date(data.timestamp);
-        $('.last-updated-time').text(timestamp.toString());
+        $('.last-updated-time-'+month).text(timestamp.toString());
 
-        update_cumulative(data.units);
-        update_blocks(data.units);
-
-        $('[data-toggle="tooltip"]').tooltip()
-
-        $('#blocks').show();
-        $('#loading').hide();
+        update_cumulative(data.units, '#all-blocks-'+month);
+        update_blocks(data.units, flat_blocks, '#blocks-'+month);
+        callback();
     });
-});
+
+
+}
+
+$(function() {
+    populate_data('https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari.json', 'nov', flat_blocks_nov, function() {
+        populate_data('https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari_2.json', 'feb', flat_blocks_feb, function() {
+            $('[data-toggle="tooltip"]').tooltip()
+
+            $('#blocks-nov').show();
+            $('#blocks-feb').show();
+            $('#loading').hide();
+        })
+    });
+})
 </script>
 
 </head>
@@ -156,7 +173,7 @@ $(function() {
 <body>
 <div class="container">
     <div class="jumbotron">
-            <h3>Bidadari November Flat Selection</h3>
+        <h3>Bidadari  Flat Selection</h3>
     </div>
 
     <div class="alert alert-danger">
@@ -165,7 +182,7 @@ $(function() {
 
     <div class="row" id="loading">
         <div class="col-md-12">
-            <h4>Loading data...</h4>
+            <h3>Loading data...</h3>
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                     <span class="sr-only">Loading</span>
@@ -176,26 +193,55 @@ $(function() {
 
     <div class="row" id="static">
         <div class="col-md-12" id="data-source">
-            <h4>Machine Readable Data Source</h4>
+            <h3>Machine Readable Data Source</h3>
             For spreadsheet lovers and tech geeks, here is the full data crawled from HDB in nice machine readable formats, updated hourly if there are changes.
-            <ul>
-            <li><a href="https://github.com/soedar/hdb_scraper/blob/master/data/bidadari.csv">CSV (Github Viewer)</a></li>
-            <li><a href="https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari.csv" download>CSV (Excel)</a></li>
-            <li><a href="https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari.json" download>JSON</a></li>
-            </ul>
-            <strong>Last updated:</strong> <span class="last-updated-time"></span>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>February 16</h4>
+                    <ul>
+                    <li><a href="https://github.com/soedar/hdb_scraper/blob/master/data/bidadari_2.csv">CSV (Github Viewer)</a></li>
+                    <li><a href="https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari_2.csv" download>CSV (Excel)</a></li>
+                    <li><a href="https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari_2.json" download>JSON</a></li>
+                    </ul>
+                    <strong>Last updated:</strong> <span class="last-updated-time-feb"></span>
+                </div>
+
+                <div class="col-sm-6">
+                    <h4>November 15</h4>
+                    <ul>
+                    <li><a href="https://github.com/soedar/hdb_scraper/blob/master/data/bidadari.csv">CSV (Github Viewer)</a></li>
+                    <li><a href="https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari.csv" download>CSV (Excel)</a></li>
+                    <li><a href="https://raw.githubusercontent.com/soedar/hdb_scraper/master/data/bidadari.json" download>JSON</a></li>
+                    </ul>
+                    <strong>Last updated:</strong> <span class="last-updated-time-nov"></span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row" id="blocks">
-        <div class="col-md-12" id="all-blocks">
-            <h4>Total Selected Flats</h4>
+    <hr>
+
+    <h3>Total Selected Flats</h3>
+    <div class="row" id="blocks-feb">
+        <div class="col-md-12" id="all-blocks-feb">
+            <h4>February 16</h4>
         </div>
     </div>
+
+    <hr>
+
+    <div class="row" id="blocks-nov">
+        <div class="col-md-12" id="all-blocks-nov">
+            <h4>November 15</h4>
+        </div>
+    </div>
+
+    <hr>
 
     <div class="row">
         <div class="col-md-12">
-            <h4>Technical</h4>
+            <h3>Technical</h3>
             Source code <a href="https://github.com/soedar/hdb_scraper">here</a>
         </div>
     </div>
