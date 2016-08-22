@@ -424,7 +424,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 108B,5-Room,#14-194,14,194,available,113 Sqm,"$618,400"
 108B,5-Room,#15-194,15,194,booked,,
 108B,5-Room,#16-194,16,194,booked,,
-108B,5-Room,#17-194,17,194,available,113 Sqm,"$621,600"
+108B,5-Room,#17-194,17,194,booked,,
 108B,5-Room,#03-196,03,196,available,113 Sqm,"$583,300"
 108B,5-Room,#04-196,04,196,available,113 Sqm,"$589,300"
 108B,5-Room,#05-196,05,196,available,113 Sqm,"$595,300"
@@ -737,7 +737,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 110B,4-Room,#05-246,05,246,available,93 Sqm,"$474,600"
 110B,4-Room,#06-246,06,246,available,93 Sqm,"$482,500"
 110B,4-Room,#07-246,07,246,available,93 Sqm,"$490,300"
-110B,4-Room,#08-246,08,246,available,93 Sqm,"$493,800"
+110B,4-Room,#08-246,08,246,booked,,
 110B,4-Room,#09-246,09,246,booked,,
 110B,4-Room,#10-246,10,246,booked,,
 110B,4-Room,#11-246,11,246,booked,,
@@ -2366,7 +2366,7 @@ $227,900 - 99 Years"
 113A,4-Room,#10-118,10,118,available,93 Sqm,"$496,600"
 113A,4-Room,#11-118,11,118,booked,,
 113A,4-Room,#12-118,12,118,available,93 Sqm,"$499,400"
-113A,4-Room,#13-118,13,118,available,93 Sqm,"$500,800"
+113A,4-Room,#13-118,13,118,booked,,
 113A,4-Room,#14-118,14,118,available,93 Sqm,"$502,200"
 113A,4-Room,#15-118,15,118,booked,,
 113A,4-Room,#16-118,16,118,available,93 Sqm,"$503,600"
