@@ -125,7 +125,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 107A,4-Room,#10-274,10,274,available,93 Sqm,"$496,600"
 107A,4-Room,#11-274,11,274,available,93 Sqm,"$498,000"
 107A,4-Room,#12-274,12,274,booked,,
-107A,4-Room,#13-274,13,274,available,93 Sqm,"$500,800"
+107A,4-Room,#13-274,13,274,booked,,
 107A,4-Room,#14-274,14,274,available,93 Sqm,"$502,200"
 107A,4-Room,#15-274,15,274,booked,,
 107A,4-Room,#16-274,16,274,booked,,
@@ -416,9 +416,9 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 108B,5-Room,#06-194,06,194,available,113 Sqm,"$599,800"
 108B,5-Room,#07-194,07,194,available,113 Sqm,"$604,300"
 108B,5-Room,#08-194,08,194,available,113 Sqm,"$608,800"
-108B,5-Room,#09-194,09,194,available,113 Sqm,"$610,400"
+108B,5-Room,#09-194,09,194,booked,,
 108B,5-Room,#10-194,10,194,booked,,
-108B,5-Room,#11-194,11,194,available,113 Sqm,"$613,600"
+108B,5-Room,#11-194,11,194,booked,,
 108B,5-Room,#12-194,12,194,booked,,
 108B,5-Room,#13-194,13,194,booked,,
 108B,5-Room,#14-194,14,194,booked,,
@@ -735,7 +735,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 110B,4-Room,#03-246,03,246,available,93 Sqm,"$465,600"
 110B,4-Room,#04-246,04,246,available,93 Sqm,"$470,100"
 110B,4-Room,#05-246,05,246,available,93 Sqm,"$474,600"
-110B,4-Room,#06-246,06,246,available,93 Sqm,"$482,500"
+110B,4-Room,#06-246,06,246,booked,,
 110B,4-Room,#07-246,07,246,booked,,
 110B,4-Room,#08-246,08,246,booked,,
 110B,4-Room,#09-246,09,246,booked,,
@@ -1700,14 +1700,7 @@ $125,100 - 35 Years
 $132,600 - 40 Years
 $139,000 - 45 Years
 $232,300 - 99 Years"
-111B,2-Room Flexi (Short Lease/99-Year Lease),#12-74,12,74,available,47 Sqm,"$77,700 - 15 Years
-$93,200 - 20 Years
-$106,100 - 25 Years
-$116,600 - 30 Years
-$125,500 - 35 Years
-$133,100 - 40 Years
-$139,500 - 45 Years
-$233,100 - 99 Years"
+111B,2-Room Flexi (Short Lease/99-Year Lease),#12-74,12,74,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#13-74,13,74,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#14-74,14,74,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#15-74,15,74,booked,,
