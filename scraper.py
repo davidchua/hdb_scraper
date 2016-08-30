@@ -176,48 +176,49 @@ def grab_data(url, blocks_and_flat_types, contracts, expected_count, filename, b
 if __name__ == "__main__":
     url = "http://services2.hdb.gov.sg/webapp/BP13AWFlatAvail/BP13EBSFlatSearch"
 
-    blocks_and_flat_types = {
-        "101A": ["2-Room Flexi (Short Lease/99-Year Lease)", "3-Room", "4-Room"],
-        "102A": ["2-Room Flexi (Short Lease/99-Year Lease)", "4-Room"],
-        "102B": ["3-Room", "4-Room"],
-        "103A": ["3-Room", "4-Room"],
-        "103B": ["3-Room", "4-Room"],
-        "104A": ["2-Room Flexi (Short Lease/99-Year Lease)", "3-Room", "4-Room"],
-        "105A": ["4-Room", "5-Room"],
-        "105B": ["4-Room", "5-Room"],
-        "106A": ["4-Room", "5-Room"],
-        "106B": ["4-Room", "5-Room"],
-        "115A": ["3-Room", "4-Room"],
-        "115C": ["3-Room", "4-Room"],
-        "118A": ["3-Room", "4-Room"]
-    }
+    # Nov 2015 selection has ended
+    #blocks_and_flat_types = {
+    #    "101A": ["2-Room Flexi (Short Lease/99-Year Lease)", "3-Room", "4-Room"],
+    #    "102A": ["2-Room Flexi (Short Lease/99-Year Lease)", "4-Room"],
+    #    "102B": ["3-Room", "4-Room"],
+    #    "103A": ["3-Room", "4-Room"],
+    #    "103B": ["3-Room", "4-Room"],
+    #    "104A": ["2-Room Flexi (Short Lease/99-Year Lease)", "3-Room", "4-Room"],
+    #    "105A": ["4-Room", "5-Room"],
+    #    "105B": ["4-Room", "5-Room"],
+    #    "106A": ["4-Room", "5-Room"],
+    #    "106B": ["4-Room", "5-Room"],
+    #    "115A": ["3-Room", "4-Room"],
+    #    "115C": ["3-Room", "4-Room"],
+    #    "118A": ["3-Room", "4-Room"]
+    #}
 
-    contracts = {
-        "101A": "C1",
-        "102A": "C1",
-        "102B": "C1",
-        "103A": "C1",
-        "103B": "C1",
-        "104A": "C1",
-        "105A": "C4",
-        "105B": "C4",
-        "106A": "C4",
-        "106B": "C4",
-        "115A": "C3",
-        "115C": "C3",
-        "118A": "C3"
-    }
+    #contracts = {
+    #    "101A": "C1",
+    #    "102A": "C1",
+    #    "102B": "C1",
+    #    "103A": "C1",
+    #    "103B": "C1",
+    #    "104A": "C1",
+    #    "105A": "C4",
+    #    "105B": "C4",
+    #    "106A": "C4",
+    #    "106B": "C4",
+    #    "115A": "C3",
+    #    "115C": "C3",
+    #    "118A": "C3"
+    #}
 
-    expected_count = {
-        "2-Room Flexi (Short Lease/99-Year Lease)": 192,
-        "3-Room": 567,
-        "4-Room": 1229,
-        "5-Room": 151
-    }
+    #expected_count = {
+    #    "2-Room Flexi (Short Lease/99-Year Lease)": 192,
+    #    "3-Room": 567,
+    #    "4-Room": 1229,
+    #    "5-Room": 151
+    #}
 
-    blocks_and_flat_types = OrderedDict(sorted(blocks_and_flat_types.items()))
-    expected_count = OrderedDict(sorted(expected_count.items()))
-    grab_data(url, blocks_and_flat_types, contracts, expected_count, 'bidadari', '201511')
+    #blocks_and_flat_types = OrderedDict(sorted(blocks_and_flat_types.items()))
+    #expected_count = OrderedDict(sorted(expected_count.items()))
+    #grab_data(url, blocks_and_flat_types, contracts, expected_count, 'bidadari', '201511')
 
     blocks_and_flat_types = {
         "107A": ["3-Room", "4-Room", "5-Room"],
