@@ -386,7 +386,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 108B,4-Room,#07-192,07,192,available,93 Sqm,"$481,600"
 108B,4-Room,#08-192,08,192,available,93 Sqm,"$493,800"
 108B,4-Room,#09-192,09,192,available,93 Sqm,"$499,600"
-108B,4-Room,#10-192,10,192,available,93 Sqm,"$505,300"
+108B,4-Room,#10-192,10,192,booked,,
 108B,4-Room,#11-192,11,192,booked,,
 108B,4-Room,#12-192,12,192,booked,,
 108B,4-Room,#13-192,13,192,booked,,
