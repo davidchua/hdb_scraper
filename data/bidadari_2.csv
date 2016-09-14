@@ -703,7 +703,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 110A,5-Room,#13-222,13,222,available,120 Sqm(3Gen),"$603,300"
 110A,5-Room,#14-222,14,222,available,120 Sqm(3Gen),"$615,800"
 110A,5-Room,#15-222,15,222,available,120 Sqm(3Gen),"$628,200"
-110A,5-Room,#16-222,16,222,available,120 Sqm(3Gen),"$628,200"
+110A,5-Room,#16-222,16,222,booked,,
 110B,4-Room,#07-240,07,240,available,93 Sqm,"$481,600"
 110B,4-Room,#08-240,08,240,available,93 Sqm,"$485,100"
 110B,4-Room,#09-240,09,240,available,93 Sqm,"$486,500"
