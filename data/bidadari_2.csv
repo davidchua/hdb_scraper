@@ -179,7 +179,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 107B,5-Room,#04-278,04,278,available,120 Sqm(3Gen),"$597,500"
 107B,5-Room,#05-278,05,278,available,120 Sqm(3Gen),"$603,500"
 107B,5-Room,#06-278,06,278,available,120 Sqm(3Gen),"$608,000"
-107B,5-Room,#07-278,07,278,available,120 Sqm(3Gen),"$612,500"
+107B,5-Room,#07-278,07,278,booked,,
 107B,5-Room,#08-278,08,278,available,120 Sqm(3Gen),"$617,000"
 107B,5-Room,#09-278,09,278,available,120 Sqm(3Gen),"$618,600"
 107B,5-Room,#10-278,10,278,available,120 Sqm(3Gen),"$620,200"
