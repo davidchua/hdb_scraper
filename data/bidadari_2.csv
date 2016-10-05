@@ -200,7 +200,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 107B,5-Room,#14-284,14,284,booked,,
 107B,5-Room,#15-284,15,284,booked,,
 107B,5-Room,#16-284,16,284,booked,,
-107B,5-Room,#06-286,06,286,available,113 Sqm,"$589,300"
+107B,5-Room,#06-286,06,286,booked,,
 107B,5-Room,#07-286,07,286,booked,,
 107B,5-Room,#08-286,08,286,booked,,
 107B,5-Room,#09-286,09,286,booked,,
@@ -711,7 +711,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 110B,4-Room,#11-240,11,240,available,93 Sqm,"$489,300"
 110B,4-Room,#12-240,12,240,booked,,
 110B,4-Room,#13-240,13,240,booked,,
-110B,4-Room,#14-240,14,240,available,93 Sqm,"$502,200"
+110B,4-Room,#14-240,14,240,booked,,
 110B,4-Room,#15-240,15,240,booked,,
 110B,4-Room,#16-240,16,240,available,93 Sqm,"$503,600"
 110B,4-Room,#01-244,01,244,available,93 Sqm,"$448,400"
@@ -1026,14 +1026,7 @@ $98,200 - 35 Years
 $104,100 - 40 Years
 $109,100 - 45 Years
 $182,400 - 99 Years"
-111A,2-Room Flexi (Short Lease/99-Year Lease),#08-52,08,52,available,38 Sqm,"$61,500 - 15 Years
-$73,800 - 20 Years
-$83,900 - 25 Years
-$92,200 - 30 Years
-$99,300 - 35 Years
-$105,300 - 40 Years
-$110,300 - 45 Years
-$184,400 - 99 Years"
+111A,2-Room Flexi (Short Lease/99-Year Lease),#08-52,08,52,booked,,
 111A,2-Room Flexi (Short Lease/99-Year Lease),#09-52,09,52,booked,,
 111A,2-Room Flexi (Short Lease/99-Year Lease),#10-52,10,52,booked,,
 111A,2-Room Flexi (Short Lease/99-Year Lease),#11-52,11,52,booked,,
@@ -1512,14 +1505,7 @@ $120,500 - 35 Years
 $127,800 - 40 Years
 $134,000 - 45 Years
 $223,900 - 99 Years"
-111B,2-Room Flexi (Short Lease/99-Year Lease),#07-72,07,72,available,47 Sqm,"$76,000 - 15 Years
-$91,200 - 20 Years
-$103,700 - 25 Years
-$114,000 - 30 Years
-$122,700 - 35 Years
-$130,100 - 40 Years
-$136,400 - 45 Years
-$227,900 - 99 Years"
+111B,2-Room Flexi (Short Lease/99-Year Lease),#07-72,07,72,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#08-72,08,72,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#09-72,09,72,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#10-72,10,72,booked,,
