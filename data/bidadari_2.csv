@@ -96,7 +96,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 107A,4-Room,#03-270,03,270,available,93 Sqm,"$456,900"
 107A,4-Room,#04-270,04,270,available,93 Sqm,"$461,400"
 107A,4-Room,#05-270,05,270,available,93 Sqm,"$465,900"
-107A,4-Room,#06-270,06,270,available,93 Sqm,"$478,100"
+107A,4-Room,#06-270,06,270,booked,,
 107A,4-Room,#07-270,07,270,booked,,
 107A,4-Room,#08-270,08,270,booked,,
 107A,4-Room,#09-270,09,270,booked,,
@@ -260,7 +260,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 108A,3-Room,#07-182,07,182,available,68 Sqm,"$334,300"
 108A,3-Room,#08-182,08,182,booked,,
 108A,3-Room,#09-182,09,182,booked,,
-108A,3-Room,#10-182,10,182,available,68 Sqm,"$338,800"
+108A,3-Room,#10-182,10,182,booked,,
 108A,3-Room,#11-182,11,182,booked,,
 108A,3-Room,#12-182,12,182,booked,,
 108A,3-Room,#13-182,13,182,booked,,
@@ -676,7 +676,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 110A,5-Room,#15-216,15,216,booked,,
 110A,5-Room,#16-216,16,216,booked,,
 110A,5-Room,#03-218,03,218,available,113 Sqm,"$551,800"
-110A,5-Room,#04-218,04,218,available,113 Sqm,"$557,800"
+110A,5-Room,#04-218,04,218,booked,,
 110A,5-Room,#05-218,05,218,booked,,
 110A,5-Room,#06-218,06,218,booked,,
 110A,5-Room,#07-218,07,218,booked,,
@@ -701,7 +701,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 110A,5-Room,#11-222,11,222,available,120 Sqm(3Gen),"$600,100"
 110A,5-Room,#12-222,12,222,booked,,
 110A,5-Room,#13-222,13,222,available,120 Sqm(3Gen),"$603,300"
-110A,5-Room,#14-222,14,222,available,120 Sqm(3Gen),"$615,800"
+110A,5-Room,#14-222,14,222,booked,,
 110A,5-Room,#15-222,15,222,booked,,
 110A,5-Room,#16-222,16,222,booked,,
 110B,4-Room,#07-240,07,240,available,93 Sqm,"$481,600"
@@ -1170,7 +1170,7 @@ $186,800 - 99 Years"
 111A,4-Room,#08-60,08,60,available,93 Sqm,"$485,100"
 111A,4-Room,#09-60,09,60,available,93 Sqm,"$486,500"
 111A,4-Room,#10-60,10,60,booked,,
-111A,4-Room,#11-60,11,60,available,93 Sqm,"$489,300"
+111A,4-Room,#11-60,11,60,booked,,
 111A,4-Room,#12-60,12,60,booked,,
 111A,4-Room,#13-60,13,60,booked,,
 111A,4-Room,#14-60,14,60,booked,,
