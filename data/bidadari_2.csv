@@ -73,7 +73,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 107A,3-Room,#10-266,10,266,booked,,
 107A,3-Room,#11-266,11,266,booked,,
 107A,3-Room,#12-266,12,266,booked,,
-107A,3-Room,#13-266,13,266,available,68 Sqm,"$341,800"
+107A,3-Room,#13-266,13,266,booked,,
 107A,3-Room,#14-266,14,266,booked,,
 107A,3-Room,#15-266,15,266,booked,,
 107A,3-Room,#16-266,16,266,booked,,
