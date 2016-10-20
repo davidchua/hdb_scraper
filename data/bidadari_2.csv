@@ -167,7 +167,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 107B,4-Room,#07-282,07,282,available,93 Sqm,"$490,300"
 107B,4-Room,#08-282,08,282,booked,,
 107B,4-Room,#09-282,09,282,available,93 Sqm,"$495,200"
-107B,4-Room,#10-282,10,282,available,93 Sqm,"$496,600"
+107B,4-Room,#10-282,10,282,booked,,
 107B,4-Room,#11-282,11,282,booked,,
 107B,4-Room,#12-282,12,282,booked,,
 107B,4-Room,#13-282,13,282,booked,,
@@ -1546,7 +1546,7 @@ $214,900 - 99 Years"
 111B,4-Room,#15-76,15,76,available,93 Sqm,"$503,600"
 111B,4-Room,#16-76,16,76,booked,,
 111B,4-Room,#06-78,06,78,available,93 Sqm,"$469,400"
-111B,4-Room,#07-78,07,78,available,93 Sqm,"$472,900"
+111B,4-Room,#07-78,07,78,booked,,
 111B,4-Room,#08-78,08,78,booked,,
 111B,4-Room,#09-78,09,78,booked,,
 111B,4-Room,#10-78,10,78,booked,,
