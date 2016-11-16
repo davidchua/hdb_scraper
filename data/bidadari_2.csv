@@ -180,7 +180,7 @@ block,flat_type,unit_no,floor,stack,status,size,cost
 107B,5-Room,#05-278,05,278,available,120 Sqm(3Gen),"$603,500"
 107B,5-Room,#06-278,06,278,available,120 Sqm(3Gen),"$608,000"
 107B,5-Room,#07-278,07,278,booked,,
-107B,5-Room,#08-278,08,278,available,120 Sqm(3Gen),"$617,000"
+107B,5-Room,#08-278,08,278,booked,,
 107B,5-Room,#09-278,09,278,booked,,
 107B,5-Room,#10-278,10,278,booked,,
 107B,5-Room,#11-278,11,278,booked,,
@@ -1434,14 +1434,7 @@ $118,400 - 35 Years
 $125,500 - 40 Years
 $131,600 - 45 Years
 $219,900 - 99 Years"
-111B,2-Room Flexi (Short Lease/99-Year Lease),#06-72,06,72,available,47 Sqm,"$74,600 - 15 Years
-$89,600 - 20 Years
-$101,900 - 25 Years
-$112,000 - 30 Years
-$120,500 - 35 Years
-$127,800 - 40 Years
-$134,000 - 45 Years
-$223,900 - 99 Years"
+111B,2-Room Flexi (Short Lease/99-Year Lease),#06-72,06,72,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#07-72,07,72,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#08-72,08,72,booked,,
 111B,2-Room Flexi (Short Lease/99-Year Lease),#09-72,09,72,booked,,
